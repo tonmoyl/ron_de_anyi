@@ -1,20 +1,20 @@
 var assert = require('assert');
-import Card from '../src/card';
+import {Card} from '../src/card';
 
 describe('Card', () => {
-  describe('Initialization', () => {
-    it('should have the correct this._suit and this._value properties', () => {
-      let card = new Card('h', 1);
-      assert.equal(card._suit, 'h');
-      assert.equal(card._value, 1);
-    });
-  });
-  
-  describe('Getter methods', () => {
-    it('should return the correct suit and value properties', () => {
-      let card = new Card('h', 1);
-      assert.equal(card.suit, 'h');
+  describe('Setup', () => {
+    let card = new Card(1, 'h');
+    it('should initialize with the correct properties', () => {
       assert.equal(card.value, 1);
+      assert.equal(card.suit, 'h');
+      assert.equal(card.isJoker, false);
+    });
+
+    it('should return if card is a joker', () => {
+      let joker = new Card('joker');
+      assert.equal(joker.value, 'joker');
+      assert.equal(joker.suit, null);
+      assert.equal(joker.isJoker, true);
     });
   });
 });
