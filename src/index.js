@@ -1,10 +1,4 @@
 import _ from 'lodash';
+import Card from './card';
 
-function component() {
-  let element = document.createElement('div');
-  element.innerHTML = 'Test';
-
-  return element;
-}
-
-document.body.appendChild(component());
+window.Card = Card;
