@@ -26,7 +26,6 @@ export const SUITS = [
 ];
 
 export const VALUES = [
-  '1',
   '2',
   '3',
   '4',
