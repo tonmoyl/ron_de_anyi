@@ -1,9 +1,11 @@
 import _ from 'lodash';
 import { Card, SUITS } from './card';
 import { Deck } from './deck';
+import { Hand } from './hand';
 
 window.Card = Card;
 window.SUITS = SUITS;
-var newDeck = new Deck();
+window.newDeck = new Deck();
 newDeck.shuffleDeck();
-console.log(newDeck);
+window.firstCard = newDeck.giveCard();
+window.firstHand = new Hand();

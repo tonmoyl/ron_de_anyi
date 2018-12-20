@@ -23,6 +23,10 @@ export class Deck {
     return allCards;
   }
 
+  giveCard() {
+    return this._deck.pop();
+  }
+
   shuffleDeck() {
     this._deck = shuffle(this._deck)
   }
