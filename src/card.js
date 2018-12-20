@@ -1,16 +1,16 @@
 export class Card {
-  constructor(value, suit=null) {
-    this._value = value;
+  constructor(char, suit=null) {
+    this._char = char;
     this._suit = suit;
-    this._joker = (value === 'joker' ? true : false);
+    this._joker = (char === 'joker' ? true : false);
   }
 
   get suit() {
     return this._suit;
   }
 
-  get value() {
-    return this._value;
+  get char() {
+    return this._char;
   }
 
   get isJoker() {
@@ -25,7 +25,7 @@ export const SUITS = [
   'Diamonds'
 ];
 
-export const VALUES = [
+export const CHARS = [
   '2',
   '3',
   '4',
@@ -40,3 +40,19 @@ export const VALUES = [
   'King',
   'Ace'
 ]
+
+export const VALUES = {
+  '2': 2,
+  '3': 3,
+  '4': 4,
+  '5': 5,
+  '6': 6,
+  '7': 7,
+  '8': 8,
+  '9': 9,
+  '10': 10,
+  'Jack': 11,
+  'Queen': 12,
+  'King': 13,
+  'Ace': 1
+}

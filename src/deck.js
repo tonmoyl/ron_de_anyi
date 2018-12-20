@@ -1,4 +1,4 @@
-import { Card, SUITS, VALUES} from './card';
+import { Card, SUITS, CHARS } from './card';
 import { shuffle } from 'lodash';
 
 export class Deck {
@@ -15,7 +15,7 @@ export class Deck {
     var allCards = [];
     for (var i = 0; i < 2; i++) {
       SUITS.forEach( (suit) => {
-        VALUES.forEach( (val) => {
+        CHARS.forEach( (val) => {
           allCards.push(new Card(val, suit));
         })
       })
