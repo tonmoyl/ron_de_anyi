@@ -22,5 +22,5 @@ firstGroup.addCard(newDeck.giveCard());
 firstGroup.addCard(newDeck.giveCard());
 
 console.log(firstGroup);
-firstGroup.isStraight('hey');
+console.log(firstGroup.isStraight('hey'));
 console.log(firstGroup);
