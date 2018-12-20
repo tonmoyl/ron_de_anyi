@@ -1,6 +1,12 @@
+import { Hand } from './hand'l
+
 export class Player {
-  constructor(name, hand=null) {
+  constructor(name) {
     this.name = name;
-    this.hand = null;
+    this.hand = new Hand();
+  }
+
+  receiveCards(card) {
+    this.hand.receiveCards(cards);
   }
 }

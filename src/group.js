@@ -1,15 +1,35 @@
 import { VALUES } from './card';
 
 export class Group {
-  constructor() {
-    this.cards = [];
+  constructor(cards = []) {
+    this.cards = cards;
   }
 
   addCard(card) {
     var test = this.cards.slice();
     test.push(card);
-    if (isStraight(test) || isHouse(test)) {
+    if (this.isStraight(test) || this.isHouse(test)) {
       this.cards.push(card);
+      return true;
+    }
+    return false;
+  }
+
+  removeCard(card) {
+    var test = [];
+    var foundCard = false;
+    for (var i = 0; i < this.cards.length; i++) {
+      if (this.cards[i] === card){
+        foundCard = true;
+      } else {
+        test.push(this.cards[i])
+      }
+    }
+
+    if (!foundCard) return false;
+
+    if (this.isStraight(test) || this.isHouse(test)) {
+      this.cards = test;
       return true;
     }
     return false;
