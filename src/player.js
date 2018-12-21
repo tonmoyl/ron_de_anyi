@@ -9,4 +9,8 @@ export class Player {
   receiveCards(card) {
     this.hand.receiveCards(cards);
   }
+
+  playCard(card) {
+    this.hand.play(card);
+  }
 }

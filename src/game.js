@@ -6,9 +6,11 @@ export class Game {
     this.totalPlayers = this.players.length;
     this.deck = new Deck();
     this.deck.shuffleDeck();
+    this.over = false;
+    this.currentPlayer = this.players[0];
   }
 
-  distributeCards(){
+  distributeCards() {
     for (var i = 0; i < this.players.length; i++) {
       var currPlayer = this.players[i];
       for (var j=0; j < 14; j++) {
@@ -22,8 +24,16 @@ export class Game {
     this.totalPlayers += 1;
   }
 
-  start(){
+  playTurn(card) {
+    this.currentPlayer.playCard(card);
+  }
+
+  start() {
     this.distributeCards();
   }
 
+  endTurn() {
+    this.players.push(this.players.shift());
+    this.currentPlayer = this.players[0];
+  }
 }
